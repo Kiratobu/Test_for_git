@@ -1,6 +1,6 @@
 from time import time
 from functools import wraps
-from unicodedata import name
+
 def test_time(func):
     @wraps(func)
     
@@ -52,7 +52,7 @@ def find_top_20(candidates):
 
 print(find_top_20(candidates))
 
-from functools import reduce
+
 
 names = ["Vasya","Alice","Petya","Jenny","Fedya","Viola","Mark","Chris","Margo"]
 birthday_years = [1962,1995,2000,None,None,None,None,1998,2001]
@@ -79,22 +79,6 @@ def get_inductees (names, birthday_years, genders):
         
 
 
-
-# def get_inductees(names, birthday_years, genders):
-#     passed_students = []
-#     unknown_students = []
-#     for index_birth, birth in enumerate(birthday_years):
-#         for index_genders, gender in enumerate(genders):
-#             if  birth == None and gender == None and index_birth==index_genders or \
-#                 birth == None and gender == 'Male' and index_birth==index_genders or \
-#                 birth!=None and 1991 <= birth <= 2003 and gender == None and index_birth==index_genders:
-#                 unknown_students.append(names[index_birth])
-#             elif birth!=None and 1991 <= birth <= 2003 and gender == 'Male' and index_birth==index_genders:
-#                 passed_students.append(names[index_birth])
-
-#     return( f'Студенты годные для службы{passed_students}', 
-#             f'Студенты с неполной информацией{unknown_students}')
-        
 
 
 
