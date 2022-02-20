@@ -82,26 +82,6 @@ def get_inductees (names, birthday_years, genders):
 
 
 
-def get_inductees_1(names, birthday_years, genders):
-    students = []
-    passed_students = []
-    unknown_students = []
-    arguments = ['name', 'birthday_year', 'gender']
-    zipped_info = list(zip(names,birthday_years,genders))
-    for info in zipped_info:
-        students.append(dict(zip(arguments,info)))
-    for data in students:
-        if  data['birthday_year']==None and data['gender'] == None or \
-            data['birthday_year']==None and data['gender'] == 'Male' or \
-            data['birthday_year']!=None and 1991<=data['birthday_year']<=2003 and data['gender'] ==None:
-            unknown_students.append(data['name'])
-        elif data['birthday_year']!=None and 1991<=data['birthday_year']<=2003 and data['gender'] =='Male':
-            passed_students.append(data['name'])
-            
-    return( f'Студенты годные для службы{passed_students}', 
-            f'Студенты с неполной информацией{unknown_students}')
-
-# get_inductees_1(names,birthday_years,genders)
 print(get_inductees(names,birthday_years,genders))
 
  
